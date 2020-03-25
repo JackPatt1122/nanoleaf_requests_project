@@ -16,6 +16,11 @@ Termcolor Allows for color outputs in your CLI
 
 ```bash
     import nanoleaf
+
+
+    nanoleaf.setBrightness(100) #changes panel brightness
+    nanoleaf.getInfo() #return all data about nanoleaf panels
+
 ```
 
 
