@@ -413,5 +413,20 @@ def setColorTemp(IPAddress, token, value):
     except requests.exceptions.HTTPError:
         cprint("Error: Values range 1200 - 6500", 'red')
 
+def getColorMode(IPAddress, token):
+    url = "http://" + IPAddress + ":16021/api/v1/" + token + "/state/colorMode"
 
-setBrightness("192.168.86.21", "P3Kt9B6CuQhrBQi9Xwtf27WLwSaHv0jb", 0, 30)
+    try:
+        data = response = requests.get(url=url)
+        response.raise_for_status()
+        response = json.loads(data.text)
+        response = json.dumps(response, indent=2, sort_keys=True)
+        print(response)
+        return response
+
+    except requests.exceptions.RequestException as e:
+        print(e)
+        raise
+
+
+getColorMode("192.168.86.21", "P3Kt9B6CuQhrBQi9Xwtf27WLwSaHv0jb")
