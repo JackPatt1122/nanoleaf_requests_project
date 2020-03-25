@@ -20,6 +20,8 @@ Termcolor Allows for color outputs in your CLI
 
     nanoleaf.setBrightness() #changes panel brightness
     nanoleaf.getInfo() #return all data about nanoleaf panels
+    nanoleaf.getEffect() # returns all effects
+    nanoleaf.identify() #flashes panels
 
 ```
 
